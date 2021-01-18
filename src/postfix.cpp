@@ -61,6 +61,5 @@ std::string infix2postfix(std::string inf)
         else
             result += post[i];
     }
-    result += post[post.length()];
     return result;
 }
