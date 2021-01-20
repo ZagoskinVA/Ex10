@@ -13,16 +13,14 @@ std::string infix2postfix(std::string inf) {
     for (int i = 0; i < inf.length(); i++) {
         if (inf[i] == '(') {
             operators.push(inf[i]);
-        }
-        else if (inf[i] == ')') {
+        } else if (inf[i] == ')') {
             while (!operators.isEmpty()) {
                 sumb = operators.pop();
                 if (sumb == '(')
                     break;
                 post += sumb;
             }
-        }
-        else if (inf[i] == '+' || inf[i] == '-') {
+        } else if (inf[i] == '+' || inf[i] == '-') {
             while (!operators.isEmpty()) {
                 if (operators.get() == '(') {
                     break;
@@ -30,8 +28,7 @@ std::string infix2postfix(std::string inf) {
                 post += operators.pop();
             }
             operators.push(inf[i]);
-        }
-        else if (inf[i] == '*' || inf[i] == '/') {
+        } else if (inf[i] == '*' || inf[i] == '/') {
             while (!operators.isEmpty()) {
                 char sb = operators.get();
                 if (sb == '+' || sb == '-' || sb == '(') {
@@ -40,8 +37,7 @@ std::string infix2postfix(std::string inf) {
                 post += operators.pop();
             }
             operators.push(inf[i]);
-        }
-        else {
+        } else {
             post += inf[i];
         }
     }
@@ -53,21 +49,18 @@ std::string infix2postfix(std::string inf) {
         if (post[i] == ' ' && post[i - 1] == ' ' &&
             post[i + 1] > 47 && post[i + 1] < 58) {
             continue;
-        }
-        else if ((post[i] == '+' || post[i] == '-' ||
+        } else if ((post[i] == '+' || post[i] == '-' ||
             post[i] == '/' || post[i] == '*') &&
             (post[i + 1] == '+' || post[i + 1] == '-'
                 || post[i + 1] == '/' || post[i + 1] == '*')) {
             result += post[i];
             result += ' ';
-        }
-        else if (post[i] > 47 && post[i] < 58 &&
+        } else if (post[i] > 47 && post[i] < 58 &&
             (post[i + 1] == '+' || post[i + 1] == '-'
                 || post[i + 1] == '/' || post[i + 1] == '*')) {
             result += post[i];
             result += ' ';
-        }
-        else {
+        } else {
             result += post[i];
         }
     }
