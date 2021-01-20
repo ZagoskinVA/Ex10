@@ -1,4 +1,4 @@
-// Copyright 2021 ccc
+﻿// Copyright 2021 ccc
 
 #include <iostream>
 #include <cstdlib>
