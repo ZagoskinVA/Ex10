@@ -5,9 +5,10 @@
 #include "postfix.h"
 
 
-int main() {
 std::string inf("(2 + 8.3) * (6 - 3.2)");
 std::string postf = infix2postfix(inf);
+
+int main() {
 std::cout << postf << std::endl;
 return 0;
 }
