@@ -1,5 +1,7 @@
 // Copyright 2021 ccc
 
+#include <iostream>
+#include <cstdlib>
 #include "postfix.h"
 #include "MyStack.h"
 
@@ -48,17 +50,19 @@ if (post[i] == ' ' && post[i - 1] == ' ' &&
 post[i + 1] > 47 && post[i + 1] < 58) {
 continue;
 } else if ((post[i] == '+' || post[i] == '-' || post[i] == '/' || post[i] == '*') &&
-(post[i + 1] == '+' || post[i + 1] == '-' 
+(post[i + 1] == '+' || post[i + 1] == '-'
 || post[i + 1] == '/' || post[i + 1] == '*')) {
 result += post[i];
-result += ' ';} else if (post[i] > 47 && post[i] < 58 &&
-(post[i + 1] == '+' || post[i + 1] == '-' 
+result += ' ';
+} else if (post[i] > 47 && post[i] < 58 &&
+(post[i + 1] == '+' || post[i + 1] == '-'
 || post[i + 1] == '/' || post[i + 1] == '*')) {
 result += post[i];
 result += ' ';
 } else {
 result += post[i];
 
+}
 }
 return result;
 }
