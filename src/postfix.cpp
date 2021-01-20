@@ -6,7 +6,8 @@
 #include "MyStack.h"
 
 std::string infix2postfix(std::string inf) {
-std::string post, result;
+	std::string buf(inf);
+ std::string post,result;
 MyStack<char> operators(400);
 char sumb = '\0';
 for (int i = 0; i < inf.length(); i++) {
