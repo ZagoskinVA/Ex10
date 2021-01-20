@@ -6,12 +6,11 @@
 
 template <typename T>
 class MyStack {
-
-private:
+ private:
 T* stackPtr;
 int size;
 int top;
-public:
+ public:
 explicit MyStack(int size);
 explicit MyStack(const MyStack& stack);
 ~MyStack();

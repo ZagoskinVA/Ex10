@@ -7,7 +7,7 @@
 
 std::string infix2postfix(std::string inf) {
 MyStack<char> operators(400);
-std::string post("");
+std::string post;
 char sumb = '\0';
 for (int i = 0; i < inf.length(); i++) {
 if (inf[i] == '(') {
@@ -43,13 +43,14 @@ post += inf[i];
 while (!operators.isEmpty()) {
 post += operators.pop();
 }
-std::string result("");
+std::string result;
 result += post[0];
 for (int i = 1; i < post.length(); i++) {
 if (post[i] == ' ' && post[i - 1] == ' ' &&
 post[i + 1] > 47 && post[i + 1] < 58) {
 continue;
-} else if ((post[i] == '+' || post[i] == '-' || post[i] == '/' || post[i] == '*') &&
+} else if ((post[i] == '+' || post[i] == '-' || 
+post[i] == '/' || post[i] == '*') &&
 (post[i + 1] == '+' || post[i + 1] == '-'
 || post[i + 1] == '/' || post[i + 1] == '*')) {
 result += post[i];
@@ -61,7 +62,6 @@ result += post[i];
 result += ' ';
 } else {
 result += post[i];
-
 }
 }
 return result;
